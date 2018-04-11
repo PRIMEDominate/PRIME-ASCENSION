@@ -1,0 +1,47 @@
+;Author: Ackillessf
+;Date Created: 8 Nov 2017
+;Modified By; Dominate
+;Date Modified: 11 April 2018
+;Purpose: Complete Vikings Woc Task Refreshers with randomized wait time between clicks
+
+
+HotKeySet("{ESC}", "Terminate")
+Func Terminate()
+    msgbox(0,'Ending','Macro Ended')
+    Exit
+ EndFunc
+
+;The amount of refreshers you want to run. If you bought a pack with 175 clan refreshers
+;and you want to run 100 of them add 100 here.
+ $NumberOfRefreshers = 5
+
+
+While $NumberOfRefreshers > 0
+
+;This ensures that the correct browser and game tab is active
+WinActivate("Vikings: War of Clans | Plarium.com - Mozilla Firefox")
+sleep (random(500,1500,1))
+
+;Click Refresh Tasks
+MouseClick("left",1091,833)
+sleep (random(500,1000,1))
+
+;NB!!!!!! This is based on your VIP Level, its the number of tasks you get in each refresher
+$NumberOfTasks = 13
+
+While $NumberOfTasks > -1
+;Complete tasks below
+MouseClick("left",1146,457)
+sleep (random(500,1500,1))
+MouseClick("left",1146,457)
+sleep (random(500,1500,1))
+
+$NumberOfTasks -=1
+WEnd
+
+;Reduces the number of refreshers to use by 1
+$NumberOfRefreshers -=1
+WEnd
+
+
+;Hit F5 on your keyboard while this window is active to begin running
